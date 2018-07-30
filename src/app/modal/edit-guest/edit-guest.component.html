@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <h4 class="modal-title">Edit guest</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    </button>
+</div>
+<div class="modal-body">
+    <p>Edit guest name</p>
+    <input [ngModel]="nameChange" (keydown.enter)="closeModal()" (ngModelChange)="nameChange = $event">
+</div>
+<div class="modal-footer">
+    <button class="btn btn-outline-dark" (click)="closeModal()">
+        Close Clicked
+    </button>
+</div>
