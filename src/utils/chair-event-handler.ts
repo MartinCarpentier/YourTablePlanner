@@ -19,7 +19,7 @@ export class ChairEventHandler {
         return modelRef.result;
     }
     pointerUp() {
-        throw new Error("Method not implemented.");"
+        throw new Error("Method not implemented.");
     }
     pointerUpOutside() {
         throw new Error("Method not implemented.");

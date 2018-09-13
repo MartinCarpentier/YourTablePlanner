@@ -7,17 +7,20 @@ export class CircularTable extends Drawable {
     amountOfChairs: number;
     radius: number;
     chairs: Chair[];
+    tableNumber: number;
 
     constructor(x: number,
         y: number,
         amountOfChairs: number,
         radius: number,
+        tableNumber,
         public eventFactory: EventHandlerFactory) {
         super();
         this.x = x;
         this.y = y;
         this.amountOfChairs = amountOfChairs;
         this.radius = radius;
+        this.tableNumber = tableNumber;
 
         this.chairs = this.CreateChairs(amountOfChairs);
     }
@@ -27,6 +30,18 @@ export class CircularTable extends Drawable {
         var tableGraphic = new PIXI.Graphics();
 
         let eventHandler = this.eventFactory.tableEventHandler;
+
+        let style = new PIXI.TextStyle({
+            fontFamily: 'Arial',
+            fontSize: 20,
+            fontStyle: 'italic',
+            stroke: '#FFFFFF',
+            fill: '0xFFFFFF',
+        });
+        
+        var basicText = new PIXI.Text(this.tableNumber.toString(), style);
+        basicText.x = this.x-5;
+        basicText.y = this.y-10;
 
         tableGraphic.beginFill(0x000000, 1);
         tableGraphic.drawCircle(this.x, this.y, this.radius);
@@ -45,6 +60,7 @@ export class CircularTable extends Drawable {
 
         tableGraphic.on('pointerdown', onClick);
         container.addChild(tableGraphic);
+        container.addChild(basicText);
 
         for (let chair of this.chairs) {
 

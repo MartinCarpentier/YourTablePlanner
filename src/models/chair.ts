@@ -20,7 +20,7 @@ export class Chair {
     getContainer(tableX: number, tableY: number): PIXI.Container {
         this.style = new PIXI.TextStyle({
             fontFamily: 'Arial',
-            fontSize: 14,
+            fontSize: 20,
             fontStyle: 'italic',
             stroke: '#4a1850',
         });
@@ -73,10 +73,10 @@ export class Chair {
         }
         else if (currentX == tableX && currentY < tableY) {
             nameGraphic.x = currentX - (nameGraphic.width / 2);
-            nameGraphic.y = currentY - 35
+            nameGraphic.y = currentY - 35;
         }
         else if (currentX > tableX) {
-            nameGraphic.x = currentX + 20;
+            nameGraphic.x = currentX + 15;
             nameGraphic.y = currentY - 15;
         }
         else if (currentX < tableX) {

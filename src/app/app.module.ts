@@ -11,6 +11,7 @@ import { EditTableComponent } from './modal/edit-table/edit-table.component';
 import { ChairEventHandler } from '../utils/chair-event-handler';
 import { TableEventHandler } from '../utils/table-event-handler';
 import { EventHandlerFactory } from '../utils/event-handler-factory';
+import { CanvasRenderer } from '../drawing/renderer';
 
 @NgModule({
     declarations: [
@@ -25,9 +26,12 @@ import { EventHandlerFactory } from '../utils/event-handler-factory';
         ReactiveFormsModule,
         NgbModule.forRoot()
     ],
-    providers: [ChairEventHandler,
+    providers: [
+        ChairEventHandler,
         TableEventHandler,
-        EventHandlerFactory],
+        EventHandlerFactory,
+        CanvasRenderer
+    ],
     bootstrap: [AppComponent],
     entryComponents: [
         EditGuestComponent,
